@@ -1,4 +1,20 @@
 CHIP A6Q2201823321 {
     IN a, b, c, d;
-OUT f;
-PARTS: }
+    OUT f;
+
+    PARTS: 
+    Not (in=a, out=nota);
+    Not (in=b, out=notb);
+    Not (in=c, out=notc);
+    Not (in=d, out=notd);
+    And (a=nota, b=c, out=notaandc);
+    And (a=notaandc, b=d, out=firstexp);
+    And (a=a, b=notb, out=aandnotb);
+    And (a=notc, b=d, out=notcandd);
+    And (a=aandnotb, b=notcandd, out=secondexp);
+    And (a=a, b=notb, out=aandnotb);
+    And (a=c, b=notd, out=candnotd)
+    And (a=aandnotb, b=candnotd, out=thirdexp);
+    Or (a=firstexp, b=secondexp, out=tempor);
+    Or (a=tempor, b=thirdexp, out=f);
+    }
