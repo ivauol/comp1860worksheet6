@@ -14,6 +14,9 @@ CHIP A6Q2201823321 {
     And (a=aandnotb, b=notcandd, out=secondexp);
     And (a=c, b=notd, out=candnotd);
     And (a=aandnotb, b=candnotd, out=thirdexp);
-    Or (a=firstexp, b=secondexp, out=tempor);
-    Or (a=tempor, b=thirdexp, out=f);
+    And (a=b, b=c, out=bandc);
+    And (a=bandc, b=d, out=fourthexp);
+    Or (a=firstexp, b=secondexp, out=tempone);
+    Or (a=thirdexp, b=fourthexp, out=temptwo);
+    Or (a=tempone, b=temptwo, out=f);
     }
