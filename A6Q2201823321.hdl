@@ -12,7 +12,6 @@ CHIP A6Q2201823321 {
     And (a=a, b=notb, out=aandnotb);
     And (a=notc, b=d, out=notcandd);
     And (a=aandnotb, b=notcandd, out=secondexp);
-    And (a=a, b=notb, out=aandnotb);
     And (a=c, b=notd, out=candnotd)
     And (a=aandnotb, b=candnotd, out=thirdexp);
     Or (a=firstexp, b=secondexp, out=tempor);
