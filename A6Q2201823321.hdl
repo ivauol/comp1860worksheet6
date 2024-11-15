@@ -1,0 +1,4 @@
+CHIP A6Q2201823321 {
+    IN a, b, c, d;
+OUT f;
+PARTS: }
